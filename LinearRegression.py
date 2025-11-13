@@ -1,7 +1,6 @@
 import numpy as np
 
 class LinearRegression():
-
     # init function to set lr, epochs
     # fit function to fit linear regression on data
     # predict function to predict value of input data
@@ -27,7 +26,7 @@ class LinearRegression():
             Y_pred = np.dot(X,self.weights) + self.bias
 
             dw = (2/num_points)*np.dot(X.T,Y-Y_pred)
-            db = (2/num_points)*(Y-Y_pred)
+            db = (2/num_points)*np.sum(Y-Y_pred)
 
             self.weights = self.weights + self.lr*dw
             self.bias += self.lr*db
